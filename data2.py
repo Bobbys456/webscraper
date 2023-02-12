@@ -8,6 +8,7 @@ import pandas as pd
 from nltk.corpus import stopwords
 import os
 import string
+from pyvirtualdisplay import Display
 nltk_stopwords = set(stopwords.words('english'))
 
 
@@ -32,7 +33,8 @@ def get_review_summary(result_set):
 def run(company): 
 
         
-        
+        display = Display(visible=0, size=(800, 800))  
+        display.start()
         driver = webdriver.Chrome()
 
         driver.get("https://www.google.com/")
