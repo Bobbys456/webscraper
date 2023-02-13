@@ -35,7 +35,7 @@ def run(company):
         
         display = Display(visible=0, size=(800, 800))  
         display.start()
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome("/usr/bin/chromedriver")
 
         driver.get("https://www.google.com/")
         #identify search box
