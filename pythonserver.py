@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import send_file
+import data2
 
 app = Flask(__name__)
 
@@ -9,6 +10,7 @@ def home():
 
 @app.route('/return-files/')
 def return_files_tut():
+	data2.main()
 	try:
 		return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
 	except Exception as e:
