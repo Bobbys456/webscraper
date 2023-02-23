@@ -170,7 +170,7 @@ def main():
                         elif os.path.isdir(file_path):
                                 shutil.rmtree(file_path)
                 except Exception as e:
-                        print('Failed to delete %s. Reason: %s' % (file_path, e))
+                        print('Failed to delete')
 
         file = open("companies.txt", "r")
         data = file.read()
