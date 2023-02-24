@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return "Hello, World!"
 
-@app.route('/companies',methods = ['POST'])
+@app.route('/companies',methods = ['POST', 'GET'])
 def addCompany():
 	if(request.method == 'POST'):
 		company = request.form['name']
@@ -18,21 +18,14 @@ def addCompany():
 		f.close()
 
 		data2.main()
-		csv_path = 'reviews/good/summary.csv'
+		
+		
+		try:
+			return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
+		except Exception as e:
+			return str(e)
+    
 
-    	# Return the file using send_file
-		resp = make_response(render_template('error.html'), 404)
 	
-
-    # Path to the pre-made CSV fie
-    
-
-@app.route('/return-files/')
-def return_files_tut():
-	try:
-		return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
-	except Exception as e:
-		return str(e)
-    
 if __name__ == "__main__":
     app.run(debug=True)
