@@ -18,12 +18,19 @@ def addCompany():
 		f.close()
 
 		data2.main()
-		
-		
-		try:
-			return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
-		except Exception as e:
-			return str(e)
+		return redirect("http://127.0.0.1:5000/get", code=302)
+
+@app.route('/get',methods = ['POST', 'GET'])	
+def getcompany(): 	
+	try:
+		return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
+	except Exception as e:
+		return str(e)
+
+@app.route('/done',methods = ['GET'])	
+def status(): 	
+	
+	
     
 
 	
