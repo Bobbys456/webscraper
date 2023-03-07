@@ -1,6 +1,7 @@
 from flask import Flask, make_response, redirect, render_template, url_for, request
 from flask import send_file
 import data2
+import os 
 
 app = Flask(__name__)
 
@@ -29,7 +30,7 @@ def getcompany():
 
 @app.route('/done',methods = ['GET'])	
 def status(): 	
-	
+	print(os.listdir('reviews/good'))
 	
     
 
