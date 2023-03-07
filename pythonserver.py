@@ -22,7 +22,8 @@ def addCompany():
 		return redirect("http://127.0.0.1:5000/get", code=302)
 
 @app.route('/get',methods = ['POST', 'GET'])	
-def getcompany(): 	
+def getcompany(): 
+	##gjsdihbgfuoeh	
 	try:
 		return send_file(r'C:\Users\bobby\OneDrive\Documents\python projects\webscraper\reviews\good\summary.csv', as_attachment='words.csv')
 	except Exception as e:
